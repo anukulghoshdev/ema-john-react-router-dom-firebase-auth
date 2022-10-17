@@ -12,6 +12,8 @@ const Product = ({handleAddToCart, product}) => {
     const { name, img, seller, price, ratings } = product; // {}, {}, {}...
     // console.log(name);
 
+   
+
     return (
         <div className='product'>
             <img src={img} alt="" />
