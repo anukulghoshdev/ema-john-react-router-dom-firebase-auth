@@ -8,6 +8,10 @@ import Inventory from './Components/Inventory/Inventory';
 import About from './Components/About/About';
 import ErrorPage from "./error-page";
 import { productsAndCartLoaders } from './loaders/productsAndCartLoaders';
+import Signup from './Components/Signup/Signup';
+import Login from './Components/Login/Login';
+import Shipping from './Components/Shipping/Shipping';
+import PrivateRoutes from './Routes/PrivateRoutes';
 
 
 
@@ -24,22 +28,34 @@ function App() {
           element: <Shop></Shop>
         },
         {
-          path: 'Shop',
+          path: '/Shop',
           loader: async()=> fetch('products.json'),
           element: <Shop></Shop>
         },
         {
-          path: 'Orders',
+          path: '/Orders',
           loader: productsAndCartLoaders,
           element: <Order></Order>
         },
         {
-          path: 'Inventory',
-          element: <Inventory></Inventory>
+          path: '/Inventory',
+          element: <PrivateRoutes><Inventory></Inventory></PrivateRoutes>
         },
         {
-          path: 'About',
+          path: '/About',
           element: <About></About>
+        },
+        {
+          path: '/shipping',
+          element: <PrivateRoutes><Shipping></Shipping></PrivateRoutes>
+        },
+        {
+          path: '/Login',
+          element: <Login></Login>
+        },
+        {
+          path: '/Signup',
+          element: <Signup></Signup>
         },
       ]
     

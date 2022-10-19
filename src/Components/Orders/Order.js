@@ -44,6 +44,11 @@ const Order = () => {
                         {/* <Link to='/Orders'>
                             <button>Review Orders</button>
                         </Link> */}
+
+
+                        <Link to='/shipping'>
+                            <button>Proceed Shipping</button>
+                        </Link>
                     </Cart>
                 </div>
 
